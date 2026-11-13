@@ -6,11 +6,31 @@ Se construyó **CodeFlow Studio**, un entorno de programación visual que permit
 - **Sitio principal:** <https://codeflow-studio.kkoko.dev>
 - **Sitio alterno:** <https://codeflow-studio-one.vercel.app>
 
-El código de la aplicación vive en el repositorio enlazado; en esta carpeta se conserva la bitácora de prompts que se usaron para construirla.
+El código de la aplicación vive en el repositorio enlazado; en esta carpeta se conservan la bitácora de prompts que se usaron para construirla y la presentación del proyecto.
 
 ## Archivos
 
-- [`propmts.md`](./propmts.md) — prompts Prompt Engineering utilizados, en el orden en que se aplicaron.
+- [`propmts.md`](./propmts.md) — bitácora de los 6 prompts que se aplicaron, en orden, con índice y el texto original de cada uno.
+- [`presentacion-codeflow-studio.pdf`](./presentacion-codeflow-studio.pdf) — presentación del proyecto en PDF, 12 diapositivas.
+
+## Presentación
+
+El deck de 12 diapositivas recorre el proyecto de la idea a la prueba:
+
+| # | Diapositiva | Contenido |
+| --- | --- | --- |
+| 1 | Portada | CodeFlow Studio: «Mira tu código como lo ve el programa». |
+| 2 | El problema | Leer código línea a línea no muestra el camino completo; las condiciones anidadas, bucles y retornos esconden qué se ejecuta y cuándo. |
+| 3 | La idea | El código es texto, la lógica es un camino: cada programa se convierte en un diagrama de flujo. |
+| 4 | Cómo funciona | Del código al diagrama mediante análisis estático, sin ejecutar código arbitrario. |
+| 5 | Ejemplo | `sumTo(limit)` convertido en su flujo. |
+| 6 | Símbolos | Cada figura tiene un significado; el diagrama usa simbología estándar. |
+| 7 | Espacio de trabajo | Proyectos, paquetes `.codeflow.json`, archivos y carpetas. |
+| 8 | Progreso | Experiencia con XP, insignias y logros, y la sugerencia del siguiente paso. |
+| 9 | Lenguajes | JavaScript, TypeScript, Python, Java, C, C++, C#, Go, Rust y Lua con la misma visualización. |
+| 10 | Audiencia | Principiantes, estudiantes y avanzados. |
+| 11 | Seguridad | Análisis estático y ejecución sin código arbitrario. |
+| 12 | Pruébalo | Código QR y enlace a la demo en Vercel. |
 
 ## Cómo se construyó
 
