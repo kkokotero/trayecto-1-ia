@@ -1,81 +1,78 @@
-# Semana 1 · Una idea que cambió
+# Semana 1 · Ordenar tres números
 
-## Programa a una persona
+Se implementó un algoritmo en PSeInt que ordena tres números enteros de menor a mayor usando **únicamente comparaciones e intercambios**: no usa listas, ciclos anidados ni funciones de ordenamiento de biblioteca.
 
-Una persona hace de «computador» y solo ejecuta literalmente lo que le dicen; otra escribe las instrucciones.
+## Archivos
 
-**Objetivo:** ordenar tres tarjetas con números de menor a mayor con pasos que sirvan aunque los números cambien.
+- [`OrdenarTresNumeros.psc`](./OrdenarTresNumeros.psc) — algoritmo en sintaxis PSeInt, listo para abrir y ejecutar en PSeInt.
+- [`OrdenarTresNumeros.svg`](./OrdenarTresNumeros.svg) — diagrama de actividad exportado desde PSeInt.
 
-**Restricciones:**
-- Solo se puede comparar dos tarjetas e intercambiarlas.
-- No vale decir «ordénalas».
+## Cómo funciona
 
-**Pruebas:**
-- Con `7, 2, 5`
-- Con `2, 2, 9`
+El programa pide tres números por teclado y aplica tres comparaciones consecutivas, intercambiando los valores cuando corresponde:
 
-Además, hay que **mejorar una instrucción ambigua**, señalando dónde hay una decisión «si ocurre esto, haz aquello».
+1. Si `A > B`, se intercambian.
+2. Si `B > C`, se intercambian.
+3. Si `A > B`, se intercambian.
 
----
+La tercera comparación es necesaria porque el segundo intercambio puede dejar a `A` y `B` desordenados de nuevo. Al terminar, los tres valores quedan en orden ascendente.
 
-## Entrena a un clasificador humano
+Como solo usa comparaciones y swaps, funciona igual con números repetidos y con valores negativos.
 
-Cada equipo recibe **seis mensajes de entrenamiento** con su etiqueta y escribe las pistas que sirven para reconocer un mensaje no deseado.
+## Código
 
-### Mensajes de entrenamiento
+```pseint
+Algoritmo OrdenarTresNumeros
 
-| Etiqueta | Mensaje |
-| --- | --- |
-| No deseado | «Ganaste un premio. Haz clic para reclamarlo». |
-| No deseado | «Oferta exclusiva: paga hoy y recibe el doble». |
-| No deseado | «Tu cuenta será bloqueada. Entra a este enlace y confirma tu clave». |
-| Deseado | «La clase de mañana comienza a las 10:00». |
-| Deseado | «La entrega del proyecto será el viernes». |
-| Deseado | «Adjunto el acta de la reunión del equipo». |
+    Definir A, B, C, AUX Como Entero
 
-### Prueba
+    Escribir "Ingrese el primer numero:"
+    Leer A
 
-Después llegan **dos mensajes de prueba sin etiqueta**: hay que **predicir** y **justificar** cada uno.
+    Escribir "Ingrese el segundo numero:"
+    Leer B
 
----
+    Escribir "Ingrese el tercer numero:"
+    Leer C
 
-## Diseña el primer asistente
+    Si A > B Entonces
+        AUX <- A
+        A <- B
+        B <- AUX
+    FinSi
 
-1. Elijan **una sola necesidad de estudio**.
-2. Dibujen una **pantalla sencilla**.
-3. Tracen el **recorrido de una consulta** (4 a 6 pasos).
-4. Marquen cada paso con:
-   - **R** — lo que se resuelve con reglas.
-   - **M** — donde ayudaría un modelo.
-   - **H** — donde una persona revisa.
-5. Añadan un **mensaje visible de límite**.
+    Si B > C Entonces
+        AUX <- B
+        B <- C
+        C <- AUX
+    FinSi
 
----
+    Si A > B Entonces
+        AUX <- A
+        A <- B
+        B <- AUX
+    FinSi
 
-## Prueba cruzada
+    Escribir "Numeros ordenados de menor a mayor:"
+    Escribir A
+    Escribir B
+    Escribir C
 
-- **Intercambien los bocetos** con otro equipo.
-- Prueben el asistente recibido con:
-  - Una **pregunta fuera de tema**.
-  - Una pregunta que **el material no permite responder con seguridad**.
-- Entreguen una **sugerencia concreta**, que puede ser:
-  - Una regla que falta.
-  - Una respuesta que requiere revisión humana.
-  - Una frase de límite más clara.
+FinAlgoritmo
+```
 
----
+## Ejemplo de ejecución
 
-## Cierre y evidencia
+```
+Ingrese el primer numero: 7
+Ingrese el segundo numero: 2
+Ingrese el tercer numero: 5
+Numeros ordenados de menor a mayor:
+2
+5
+7
+```
 
-Cada equipo entrega:
+## Diagrama de actividad
 
-- Su **boceto**.
-- El **flujo marcado con R, M y H**.
-- La frase: *«Nuestro asistente ayuda a ___, pero todavía no debe ___»*.
-
----
-
-## Archivos de esta semana
-
-- [`OrdenarTresNumeros.psc`](./OrdenarTresNumeros.psc) — algoritmo en PSeInt que ordena tres números usando solo comparaciones e intercambios, sin listas ni funciones de ordenamiento.
-- [`OrdenarTresNumeros.svg`](./OrdenarTresNumeros.svg) — diagrama de actividad del algoritmo.
+![Diagrama de actividad del algoritmo OrdenarTresNumeros](./OrdenarTresNumeros.svg)

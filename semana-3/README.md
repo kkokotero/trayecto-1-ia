@@ -1,106 +1,42 @@
-# Reto de Prompt Engineering entre clanes
+# Semana 3 · CodeFlow Studio
 
-En nuestra sesión de IA aprendimos cómo dar mejores instrucciones a los modelos de lenguaje y cómo convertir una idea en una aplicación usando herramientas de inteligencia artificial.
+Se construyó **CodeFlow Studio**, un entorno de programación visual que permite escribir código, ejecutarlo paso a paso, ver su estado interno y modificarlo desde diagramas de flujo interactivos. Todo el proyecto se generó con ayuda de IA, iterando sobre una secuencia de prompts.
 
-Ahora vamos a ponerlo en práctica: cada célula tendrá el reto de crear una página web o aplicación con ayuda de IA, partiendo de una idea propia.
-
-Más que la IA haga todo por ustedes, lo importante es aprender a **comunicar sus ideas, definir funcionalidades, construir buenos prompts y mejorar los resultados**.
-
----
-
-## Proyecto final
-
-**CodeFlow Studio** — entorno de programación visual para escribir, ejecutar, visualizar y modificar código mediante diagramas dinámicos en tiempo real.
-
-- **Repositorio:** <https://github.com/kkokotero/codeflow-studio>
+- **Repositorio del proyecto:** <https://github.com/kkokotero/codeflow-studio>
 - **Sitio principal:** <https://codeflow-studio.kkoko.dev>
 - **Sitio alterno:** <https://codeflow-studio-one.vercel.app>
 
----
+El código de la aplicación vive en el repositorio enlazado; en esta carpeta se conserva la bitácora de prompts que se usaron para construirla.
 
-## ¿Qué deben hacer?
+## Archivos
 
-### 1. Elijan una idea
+- [`propmts.md`](./propmts.md) — prompts Prompt Engineering utilizados, en el orden en que se aplicaron.
 
-Reúnanse con su célula y elijan una idea. Puede ser una página web, una aplicación o una solución a un problema que les interese.
+## Cómo se construyó
 
-### 2. Definan cómo debería funcionar
+El proyecto se construyó de forma iterativa: cada prompt parte del estado anterior y agrega o corrige algo concreto.
 
-Piensen a quién va dirigida, qué necesita hacer el usuario, qué funcionalidades tendrá y cómo quieren que se vea.
+1. **Prompt maestro** — descripción compacta del producto: interfaz tipo IDE, lenguajes soportados, visualización, runtime, editor visual, arquitectura y entrega.
+2. **Especificación detallada** — 15 secciones que profundizan identidad visual (Material 3 Expressive), sistema de diagramas, visualización de loops y condicionales, motor de ejecución, menús contextuales, gestor de proyectos, estilos de diagramas, sincronización bidireccional, arquitectura y UX.
+3. **Corrección del generador de diagramas** — lógica de Flowchart real, con la simbología estándar (rombos para decisiones, paralelogramos para entrada/salida, óvalos para inicio y fin) y conexiones que respetan la secuencia lógica.
+4. **Aplicación de correcciones** — instrucciones para corregir los problemas detectados en el análisis previo modificando directamente el código del proyecto.
+5. **Layout y ejecución** — reorganización de los diagramas de arriba hacia abajo (Top to Bottom) y habilitación de la ejecución real de JavaScript y Python.
+6. **Logros y progresión** — sistema de niveles y logros que se desbloquean al usar la plataforma, escribir código y ejecutar programas.
 
-### 3. Construyan su prompt
+## Alcance definido en los prompts
 
-Pueden conversar con un LLM y pedirle que les haga preguntas para entender mejor su idea, organizar los requisitos y definir la lógica del proyecto.
+**Interfaz:** panel de archivos, editor con resaltado de sintaxis, canvas central de diagramas, inspector de variables, consola y barra de control de ejecución, con paneles redimensionables.
 
-### 4. Lleven su prompt a una herramienta de IA
+**Lenguajes:** JavaScript, TypeScript, Python, Lua, Java, C, C++, C#, Go y Rust, mediante adaptadores extensibles y detección automática.
 
-Utilicen alguna de las plataformas que vimos durante la sesión o exploren otras alternativas.
+**Visualización:** el código se convierte en nodos y conexiones que representan funciones, variables, condiciones, bucles, llamadas, eventos, clases, objetos y dependencias. El nodo activo se resalta durante la ejecución.
 
-### 5. Prueben y mejoren su proyecto
+**Runtime:** ejecución, pausa, reanudación, detención, reinicio, paso a paso, velocidad ajustable, breakpoints y seguimiento del estado; se inspeccionan variables locales y globales, pila de llamadas, argumentos y valores de retorno.
 
-Revisen lo que genera la IA, identifiquen errores, ajusten las instrucciones y sigan trabajando hasta conseguir el resultado que buscan.
+**Editor visual:** los nodos se pueden arrastrar y modificar, y los cambios se reflejan en el código fuente en ambos sentidos, con resolución de conflictos.
 
-> El prompt maestro que guió la construcción de CodeFlow Studio está en [`propmts.md`](./propmts.md).
+**Funciones adicionales:** historial de ejecución, snapshots, comparación de estados, búsqueda de variables, zoom, exportación e importación de archivos y proyectos con múltiples archivos.
 
----
+## Stack
 
-## Herramientas que pueden utilizar
-
-Durante la sesión exploramos herramientas para crear aplicaciones, interfaces y estilos visuales:
-
-| Herramienta | Para qué sirve |
-| --- | --- |
-| Lovable | Construir aplicaciones web mediante instrucciones en lenguaje natural. |
-| v0 | Generar interfaces y aplicaciones web con IA. |
-| Google Stitch | Explorar diseños de interfaces y generar propuestas visuales. |
-| Coolors | Crear y explorar paletas de colores. |
-
-También pueden explorar otras alternativas como Claude para idear y diseñar prototipos, o Bolt.new y Replit para desarrollar aplicaciones con asistencia de IA.
-
-> No tienen que usar todas las herramientas: elijan las que mejor se adapten a su proyecto.
-
----
-
-## Un consejo para el diseño
-
-No tienen que inventar todo el estilo visual desde cero.
-
-- Pueden utilizar **Coolors** para escoger una paleta de colores que tenga sentido con la idea de su proyecto.
-- También pueden usar una **imagen de referencia** de una página web, aplicación o diseño que les guste y compartirla con la herramienta de IA, para explicar qué elementos quieren tomar como inspiración: colores, distribución, tipografías, componentes y estilo general.
-- Incluso pueden **combinar ambas cosas**: elegir su paleta en Coolors, buscar una referencia visual y construir un prompt que explique cómo quieren que se vea su aplicación.
-
-> Procuren crear una propuesta propia y no copiar diseños o identidades de otras marcas tal cual.
-
----
-
-## Llevar el proyecto más lejos
-
-Como sugerencia, pueden investigar el uso de **Skills** para establecer instrucciones reutilizables, definir estilos de diseño, organizar la información del proyecto o mantener criterios consistentes durante su desarrollo.
-
-También pueden experimentar con **prompts estructurados**, documentación, referencias visuales, asistentes de programación y otras herramientas que descubran.
-
-Nada de esto es obligatorio. La invitación es a explorar, tener curiosidad y descubrir nuevas formas de mejorar sus resultados.
-
----
-
-## ¿Cómo será la competencia?
-
-- Cada célula desarrolla su **propia propuesta**.
-- Después, cada **clan** selecciona un proyecto finalista que lo representará en la **competencia interclanes**.
-- Pueden seguir trabajando en sus proyectos durante el resto de esta semana y hasta la próxima semana para preparar la presentación de finalistas.
-
-**Fecha límite:** martes 10 de noviembre de 2026. Se recibirán proyectos con commits realizados hasta ese martes, día de la presentación de finalistas.
-
----
-
-## ¿Qué deben tener listo?
-
-- El **prompt** que utilizaron para construir el proyecto.
-- La **página web o aplicación** desarrollada con ayuda de IA.
-- El **repositorio del proyecto**, con sus commits correspondientes.
-
----
-
-Recuerden: este reto busca que practiquen Prompt Engineering, experimenten con nuevas herramientas y conviertan sus ideas en resultados. No reemplaza lo que estamos aprendiendo de HTML y CSS, así que continúen fortaleciendo sus bases de desarrollo.
-
-Aprovechen estos días, organícense con sus células y pónganse creativos: queremos ver buenas ideas, trabajo en equipo y proyectos que demuestren todo lo que pueden construir.
+React, TypeScript, Monaco Editor, React Flow, Material 3 Expressive con Material Color Utilities, Zustand para el estado global y Motion para las animaciones. La ejecución del código se aísla en runtimes separados (Workers, WebAssembly o sandboxes de backend según el lenguaje), con límites de CPU, memoria y tiempo; nunca se ejecuta código arbitrario en el contexto principal del navegador.

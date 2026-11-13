@@ -1,9 +1,9 @@
 # Semana 1 · IA
 
-Material de la sesión de Inteligencia Artificial de la cohorte 8, organizado por semana.
+Trabajo de la sesión de Inteligencia Artificial de la cohorte 8. Cada carpeta reúne lo que se construyó durante la semana.
 
-| Semana | Qué se hizo | Enlace |
+| Carpeta | Contenido | Qué se hizo |
 | --- | --- | --- |
-| Semana 1 | Programa a una persona, clasificador humano, diseño de un asistente y prueba cruzada entre equipos. | [README](./semana-1/README.md) |
-| Semana 2 | Ordenar tres números con `if`/`else` y comparar la solución propia contra la de dos modelos de IA. | [README](./semana-2/README.md) |
-| Semana 3 | Construir con ayuda de IA la aplicación CodeFlow Studio a partir de una idea propia. | [README](./semana-3/README.md) |
+| [`semana-1/`](./semana-1/) | `OrdenarTresNumeros.psc`, `OrdenarTresNumeros.svg` | Algoritmo en PSeInt que ordena tres números enteros con solo comparaciones e intercambios, y su diagrama de actividad. |
+| [`semana-2/`](./semana-2/) | `README.md` | Actividad de comparar la solución propia contra la de dos modelos de IA; la carpeta no versiona código. |
+| [`semana-3/`](./semana-3/) | `propmts.md` | CodeFlow Studio: entorno de programación visual construido con IA, junto con la bitácora de prompts que se usaron para generarlo. |
